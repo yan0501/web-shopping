@@ -95,4 +95,9 @@ public interface TbUserMapper {
      * @mbg.generated Sat Jul 18 16:00:17 CST 2020
      */
     int updateByPrimaryKey(TbUser record);
+
+    /**
+     * 乔春燕 ：用户登录，校验用户的手机号
+     */
+    TbUser selectByPhone(String phone);
 }

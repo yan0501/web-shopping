@@ -197,7 +197,7 @@
         #{avatar,jdbcType=VARCHAR},
       </if>
       <if test="flag != null">
-        #{flag,jdbcType=INTEGER},
+        #{flag}
       </if>
     </trim>
   </insert>
@@ -300,4 +300,12 @@
       flag = #{flag,jdbcType=INTEGER}
     where uid = #{uid,jdbcType=INTEGER}
   </update>
+
+<!--
+    乔春燕
+    手机号校验
+-->
+  <select id="selectByPhone" resultMap="BaseResultMap">
+    select uid,phone,nickname,password,flag from tb_user where phone=#{phone}
+</select>
 </mapper>
